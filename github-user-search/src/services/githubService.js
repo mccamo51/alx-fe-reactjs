@@ -17,7 +17,7 @@ const fetchUserData = async (username, location, minRepos) => {
     const response = await axios.get(`https://api.github.com/search/users?q=${query}`);
     return response.data;
   } catch (error) {
-    throw new Error(error.response?.data?.message || "Something went wrong");
+    throw new Error(error.response?.data?.message || "Looks like we cant find the user");
   }
 };
 

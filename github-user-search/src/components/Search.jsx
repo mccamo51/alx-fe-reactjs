@@ -25,6 +25,10 @@ const Search = () => {
       const userData = await fetchUserData(trimmedUsername, userLocation, minimumRepositories);
       setUsers(userData.items);
 
+      if(userData.items.isEmpty){
+        setError("Looks like we cant find the user")
+      }
+
     } catch (err) {
 
       setUsers([]);
